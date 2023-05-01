@@ -73,7 +73,6 @@ def post_data():
         Xingxi_text = request.get_json().get('raw_message')
         print(request.get_json().get('raw_message'))
         # 发的什么东西
-        # 给go-cqhttp的5700端口提交数据,类似于浏览器访问的形式
         if len(Xingxi_text) == 2:
             host = "see.0mc.me"
             port = "20001"
@@ -108,7 +107,7 @@ def post_data():
 
 
 
-    return 'OK'  # 对go-cqhttp进行相应，不然会出现三次重试
+    return 'OK'  
 
-app.run(debug=True, host='127.0.0.1', port=8090)  #监听本机的5701端口（数据来源于go-cqhttp推送到5701端口的数据）
+app.run(debug=True, host='127.0.0.1', port=8090)  
 
